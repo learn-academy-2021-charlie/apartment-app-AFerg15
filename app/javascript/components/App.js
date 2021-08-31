@@ -1,5 +1,5 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React, { Component } from "react"
+
 
 class App extends React.Component {
   render () {
@@ -10,15 +10,20 @@ class App extends React.Component {
       sign_in_route,
       sign_out_route
     } = this.props
+
     return (
-    <React.Fragment>
-      { logged_in &&
-        <a href={sign_out_route }>Sign Out</a>  
-      }
-      { !logged_in &&
-        <a href={ sign_in_route }>Sign In</a>
-      }
-    </React.Fragment>
+      <React.Fragment>
+        { logged_in &&
+        <div>
+          <a href={sign_out_route }>Sign Out</a>  
+        </div>
+        }
+        { !logged_in &&
+        <div>
+          <a href={ sign_in_route }>Sign In</a>
+        </div>
+        }
+      </React.Fragment>
     );
   }
 }
