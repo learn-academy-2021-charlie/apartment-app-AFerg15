@@ -1,14 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink
-} from "react-router-dom";
-
 
 class App extends React.Component {
   render () {
