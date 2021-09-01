@@ -1,7 +1,48 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+user = [
+    {
+        email: 'testing@gmail.com',
+        password: 'abcd123',
+        password_confirmation: 'abcd123'
+    },
+    {
+        email: 'testing1@gmail.com',
+        password: 'abcd123',
+        password_confirmation: 'abcd123'
+    },
+    {
+        email: 'testing2@gmail.com',
+        password: 'abcd123',
+        password_confirmation: 'abcd123'
+    }
+]
+
+user.each do |value|
+    User.create value
+end
+
+tasks = [
+    {
+        title: 'Call the IRS',
+        description: 'I have not yet recieved my stimulus check',
+        category: 'Phone Calls',
+        urgency: 'High',
+        hours: '3-9',
+     },
+    {
+        title: 'Steam clean my carpets',
+        description: 'My dog has a bladder issue, I need help getting the pee smell out of my carpets',
+        category: 'Home Cleaning',
+        urgency: 'Medium',
+        hours: '2',
+    }
+
+]
+
+# remember that we created a user when we signed up while testing devise
+
+first_user = User.where(email: 'testing1@gmail.com').first
+
+tasks.each do |value|
+    first_user.tasks.create value
+end
