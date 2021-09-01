@@ -1,2 +1,76 @@
-@import 'bootstrap'
+@import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.page-body {
+  text-align: center;
+  margin-top: 170px;
+}
+button {
+  padding: 10px;
+  background-color: #007cbe;
+  color: white;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #007cbe;
+  color: white;
+}
+
+/* ---HEADER--- */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #00af54;
+  position: fixed;
+  width: 100%;
+  top: 0
+}
+.nav-bar {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+.nav-link {
+  font-weight: bold;
+  font-size: large;
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+.nav-link:hover {
+  font-weight: bold;
+  font-size: large;
+  color: #ffa3af;
+  text-decoration: none;
+}
+.logo {
+  height: 150px;
+  margin-left: 20px;
+}
+
+/* ---HOME--- */
+.colored-doors {
+  width: 100vw;
+  margin-top: 200px;
+}
+
+
+/* ---INDEX--- */
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  text-align: left;
+  border: 1px solid #00af54;
+  border-radius: 15px;
+  padding: 40px;
+}
+.fa-icon {
+  padding-right: 10px;
+}
