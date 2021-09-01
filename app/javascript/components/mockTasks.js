@@ -14,6 +14,14 @@ let mockTasks = [
         category: 'Home Cleaning',
         urgency: 'Medium',
         hours: '2',
+    },
+    {
+        id: 3,
+        title: 'Clean out Tortoise Tank',
+        description: 'Tortoise tank needs to be emptied cleaned and refilled. Very heavy.',
+        category: 'Pet Care',
+        urgency: 'Low',
+        hours: '3',
     }
 
 ]
