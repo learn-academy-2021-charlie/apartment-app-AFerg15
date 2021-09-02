@@ -18,11 +18,11 @@ class TaskEdit extends Component {
     }
 
     handleChange = (e) => {
-      let {form} = this.state
+      let { form } = this.state
       form[e.target.name] = e.target.value
       this.setState({form: form})
     }
-    handleSubmit = () => {
+    handleSubmit = (e) => {
       this.props.updateTask(this.state.form, this.props.task.id)
       this.setState({submitted: true})
     } 
