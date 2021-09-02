@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Home from '../pages/Home'
 import TaskIndex from "../pages/TaskIndex"
 import TaskShow from "../pages/TaskShow"
+import TaskNew from "../pages/TaskNew"
+import TaskEdit from "../pages/TaskEdit"
 import {
   BrowserRouter as  Router,
   Route,
@@ -25,6 +27,33 @@ class App extends Component {
     .then(payload => this.setState({tasks: payload}))
     .catch(errors => console.log("index errors:", errors))
   }
+  
+  createTask = (newTask) => {
+    console.log(JSON.stringify(newTask))
+   fetch("/tasks", {
+     body: JSON.stringify(newTask),
+     headers: {
+       "Content-Type": "application/json"
+     },
+     method: "POST"
+   })
+   .then(response => response.json())
+   .then(payload => this.readTask())
+   .catch(errors => console.log("Task create errors:", errors))
+  }
+  updateTask = (task, id) => {
+    fetch(`tasks/${id}`, {
+      body: JSON.stringify(task),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => response.json())
+    .then(payload => this.readTask())
+    .catch(errors => console.log("Task update errors:", errors))
+  }
+  
   render() {
       const {
         logged_in,
@@ -45,12 +74,18 @@ class App extends Component {
             <Route path="/TaskIndex" render={(props) => {
               return <TaskIndex tasks={this.state.tasks} />
             }}/>
+            <Route path={'/taskedit/:id'} render={(props) => {
+            let id = props.match.params.id
+            let task = this.state.tasks.find(task => task.id === +id)
+            return <TaskEdit updateTask = {this.updateTask} task={task} />
+          }} />
             <Route path="/TaskShow/:id" render={ (props) => {
               let id = +props.match.params.id
               let task = this.state.tasks.find(a => a.id === id)
               return <TaskShow task={task} />
             }}/>
-          </Switch>
+            <Route path="/TaskNew" render={(props) => <TaskNew createTask = {this.createTask}/>} />
+            </Switch>
         </Router>
       )
     }
