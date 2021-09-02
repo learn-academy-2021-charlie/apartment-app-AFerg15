@@ -6,30 +6,38 @@
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
 }
+h1{
+  font-weight: bolder;
+}
 .page-body {
   text-align: center;
   margin-top: 170px;
 }
-button {
+.btn.btn-primary {
   padding: 10px;
   background-color: #007cbe;
   color: white;
 }
-button:hover {
+.btn:hover {
   cursor: pointer;
   background-color: #007cbe;
   color: white;
 }
 
 /* ---HEADER--- */
-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #00af54;
+header{
   position: fixed;
-  width: 100%;
-  top: 0
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 100%;
+    align-content: center;
+    background-color: #00af54;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: baseline;
 }
+
 .nav-bar {
   display: flex;
   align-items: flex-end;
@@ -48,30 +56,93 @@ header {
   color: #ffa3af;
   text-decoration: none;
 }
+.nav-link:active {
+  color: white;
+}
 .logo {
-  height: 150px;
+  height: 90px;
   margin-left: 20px;
 }
 
 /* ---HOME--- */
-.colored-doors {
-  width: 100vw;
-  margin-top: 200px;
+
+#icon {
+height: 75px;
+display: inline-block;
+}
+
+.animated {
+	-webkit-animation-duration: 1.1s;
+	animation-duration: 1.1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounceIn { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: scale(.3); 
+    } 
+
+    50% { 
+        opacity: 1; 
+        -webkit-transform: scale(1.05); 
+    } 
+
+    70% { 
+        -webkit-transform: scale(.9); 
+    } 
+
+    100% { 
+         -webkit-transform: scale(1); 
+    } 
+} 
+
+@keyframes bounceIn { 
+    0% { 
+        opacity: 0; 
+        transform: scale(.3); 
+    } 
+
+    50% { 
+        opacity: 1; 
+        transform: scale(1.05); 
+    } 
+
+    70% { 
+        transform: scale(.9); 
+    } 
+
+    100% { 
+        transform: scale(1); 
+    } 
+} 
+
+.bounceIn { 
+    -webkit-animation-name: bounceIn; 
+    animation-name: bounceIn; 
 }
 
 
 /* ---INDEX--- */
-.cards {
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
-}
+// .cards {
+//   position: absolute;
+//   display: flex;
+//   justify-content: space-around;
+//   margin: 60px;
+// }
 .card {
+  position: absolute;
   text-align: left;
   border: 1px solid #00af54;
   border-radius: 15px;
   padding: 40px;
   margin: 60px;
+}
+//---Jumbotron---//
+.jumbotron{
+  margin: 60px;
+  padding: 50px;
 }
 
 
