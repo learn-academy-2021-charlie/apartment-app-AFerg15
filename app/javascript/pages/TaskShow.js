@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Card, CardTitle, Col, Row } from 'reactstrap'
+import { NavLink } from  'react-router-dom'
 
 class TaskShow extends Component {
   render() {
@@ -20,6 +21,18 @@ class TaskShow extends Component {
             </div>
           }
         </div>
+        <NavLink
+          to={`/taskedit/${
+            this.props.task && this.props.task.id
+          }`}
+        >
+          <Button>Edit Task</Button>
+        </NavLink>
+        <NavLink to={"/taskindex"}>
+          <Button onClick={() => this.props.deleteTask(task.id)}>
+            Delete Task
+          </Button>
+        </NavLink>
       </div>
     )
   }

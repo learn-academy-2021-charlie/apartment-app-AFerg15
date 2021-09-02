@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header'
 import Home from '../pages/Home'
 import TaskIndex from "../pages/TaskIndex"
@@ -41,9 +42,9 @@ class App extends Component {
    .then(payload => this.readTask())
    .catch(errors => console.log("Task create errors:", errors))
   }
-  updateTask = (task, id) => {
-    fetch(`tasks/${id}`, {
-      body: JSON.stringify(task),
+  updateTask = (editTask, id) => {
+    fetch(`/tasks/${id}`, {
+      body: JSON.stringify(editTask),
       headers: {
         "Content-Type": "application/json"
       },
@@ -53,7 +54,19 @@ class App extends Component {
     .then(payload => this.readTask())
     .catch(errors => console.log("Task update errors:", errors))
   }
-  
+
+  deleteTask = (id) => {
+    fetch(`/tasks/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+    .then((response) => response.json())
+    .then((payload) => this.readTask())
+    .catch((errors) => console.log("Task delete fetch errors:", errors))
+  }
+
   render() {
       const {
         logged_in,
