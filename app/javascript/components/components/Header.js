@@ -15,17 +15,18 @@ class Header extends Component {
           <img src={logo} alt="logo" className="logo"/>
         </NavLink>
         <div className="nav-bar">
-          <ul>
-            <NavLink to="/TaskIndex" className="nav-link">Task Board</NavLink>
-          </ul>
-          <ul>
+          
+            <NavLink to="/TaskIndex" className="nav-link" style={{color: 'white', textDecoration: 'none'}} activeStyle={{color: 'white', textDecoration: 'none'}}>Task Board</NavLink>
+         
+            <NavLink to="/TaskNew" className="nav-link" style={{color: 'white', textDecoration: 'none'}} activeStyle={{color: 'white', textDecoration: 'none'}}>Create a Task</NavLink>
+         
             {logged_in &&
-              <a href={sign_out_route} className="nav-link">Sign Out</a>
+              <a href={sign_out_route} className="nav-link" style={{color: 'white', textDecoration: 'none'}} activeStyle={{color: 'white', textDecoration: 'none'}}>Sign Out</a>
             }
             {!logged_in &&
-              <a href={sign_in_route} className="nav-link">Sign In</a>
+              <a href={sign_in_route} className="nav-link" style={{color: 'white', textDecoration: 'none'}} activeStyle={{color: 'white', textDecoration: 'none'}}>Sign In</a>
             }
-          </ul>
+        
         </div>
       </header>
     )

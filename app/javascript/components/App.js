@@ -95,9 +95,11 @@ class App extends Component {
             <Route path="/TaskShow/:id" render={ (props) => {
               let id = +props.match.params.id
               let task = this.state.tasks.find(a => a.id === id)
-              return <TaskShow task={task} />
+              return <TaskShow task={task} deleteTask = {this.deleteTask} />
             }}/>
             <Route path="/TaskNew" render={(props) => <TaskNew createTask = {this.createTask}/>} />
+            
+            
             </Switch>
         </Router>
       )
