@@ -13,15 +13,34 @@ h1{
   text-align: center;
   margin-top: 170px;
 }
+.page-body2{
+  text-align: center;
+  margin-top: 170px;
+  background-image: url("/app/javascript/components/assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+}
 .btn.btn-primary {
   padding: 10px;
   background-color: #007cbe;
   color: white;
+  display: inline-block;
+  margin: 25px;
 }
 .btn:hover {
   cursor: pointer;
   background-color: #007cbe;
   color: white;
+}
+.btn.btn-secondary {
+  padding: 10px;
+  background-color: #007cbe;
+  border: none;
+  color: white;
+  display: inline-block;
+  margin: 25px;
 }
 
 /* ---HEADER--- */
@@ -78,7 +97,67 @@ display: inline-block;
 	animation-fill-mode: both;
 }
 
-@-webkit-keyframes bounceIn { 
+
+
+
+/* ---INDEX--- */
+// .cards {
+//   position: absolute;
+//   display: flex;
+//   justify-content: space-around;
+//   margin: 60px;
+//   padding-left: 75px;
+// }
+// .row {
+//   width: 60vw;
+//   align-content: center;
+// }
+.showTitle {
+  font-weight: bolder;
+  font-size: x-large;
+}
+// .card {
+//   position: absolute;
+//   text-align: left;
+//   border: 1px solid #00af54;
+//   border-radius: 15px;
+//   padding: 40px;
+//   width: 60vw;
+// }
+
+.theCards.card {
+  width: 75vw;
+  padding: 30px;
+}
+
+//---Jumbotron---//
+.jumbotron{
+  margin: 60px;
+  padding: 50px;
+}
+
+
+//---FORM---//
+.form.form{
+  background-color: #ffffff;
+  border:3px solid #00af54;
+  padding: 30px;
+}
+  .form{
+      position: absolute;
+      margin-top: 120px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+  
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column; 
+      align-items: center;
+  }
+
+  //-----ANIMATIONS-----//
+  @-webkit-keyframes bounceIn { 
     0% { 
         opacity: 0; 
         -webkit-transform: scale(.3); 
@@ -122,46 +201,3 @@ display: inline-block;
     -webkit-animation-name: bounceIn; 
     animation-name: bounceIn; 
 }
-
-
-/* ---INDEX--- */
-// .cards {
-//   position: absolute;
-//   display: flex;
-//   justify-content: space-around;
-//   margin: 60px;
-// }
-.card {
-  position: absolute;
-  text-align: left;
-  border: 1px solid #00af54;
-  border-radius: 15px;
-  padding: 40px;
-  margin: 60px;
-}
-//---Jumbotron---//
-.jumbotron{
-  margin: 60px;
-  padding: 50px;
-}
-
-
-//---FORM---//
-.form.form{
-  background-color: #ffffff;
-  border-radius: 15px;
-  border:3px solid #00af54;
-  padding: 30px;
-}
-  .form{
-      position: absolute;
-
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-  
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column; 
-      align-items: center;
-  }
