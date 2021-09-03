@@ -27,7 +27,6 @@ class TasksController < ApplicationController
         render json: task
     end
 
-  
     private
     def task_params
       params.require(:task).permit(:title, :description, :category, :urgency, :hours)

@@ -18,10 +18,7 @@ class TaskShow extends Component {
               <h5>{task.category}</h5>
               <h5>{task.urgency}</h5>
               <h5>Time commitment:{task.hours}</h5>
-            </div>
-          }
-        </div>
-        <NavLink
+              <NavLink
           to={`/taskedit/${
             this.props.task && this.props.task.id
           }`}
@@ -33,6 +30,9 @@ class TaskShow extends Component {
             Delete Task
           </Button>
         </NavLink>
+            </div>
+          }
+        </div>
       </div>
     )
   }

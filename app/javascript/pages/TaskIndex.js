@@ -10,7 +10,7 @@ class TaskIndex extends Component {
         <h3>Task Board</h3>
         <br />
         <br />
-        <Row className="cards">
+        <Row bsPrefix="cards">
             {this.props.tasks && this.props.tasks.map(task => {
               return (
                 <Card key={task.id}>
